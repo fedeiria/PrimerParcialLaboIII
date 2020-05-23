@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="../apiPPLaboIII2020-master/css/styles.css" type="text/css">
+    <script src="../apiPPLaboIII2020-master/js/functions.js" type="text/javascript"></script>
+    <script src="../apiPPLaboIII2020-master/js/validations.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="loading" hidden>
+        <img src="../apiPPLaboIII2020-master/img/giphy.gif" alt="loading">
+    </div>
+    <form>
+        <div class="container" id="container">
+            <button id="close-btn" value="Cerrar"></button>
+            <input type="hidden" id="id">
+            <label for="nombre">Nombre</label>
+            <br>
+            <input type="text" id="nombre" name="nombre" maxlength="35" class="noError">
+            <br>
+            <label for="cuatrimestre">Cuatrimestre</label>
+            <br>
+            <select name="cuatrimestre" id="cuatrimestre" disabled>
+                <option value="1">Opcion 1</option> 
+                <option value="2">Opcion 2</option>
+                <option value="3">Opcion 3</option>
+                <option value="4">Opcion 4</option>
+            </select>
+            <br>
+            <label for="fecha">Fecha final</label>
+            <br>
+            <input type="date" id="fecha" name="fecha" class="noError">
+            <br>
+            <label for="turno">Turno</label>
+            <br>
+            <input type="radio" id="mañana" name="turno" class="noError" checked>
+            <label for="mañana">Mañana</label>
+            <br>
+            <input type="radio" id="noche" name="turno" class="noError">
+            <label for="noche">Noche</label>
+            <br>
+            <br>
+            <input type="button" id="modifyFormDataButton" name="modifyFormDataButton" value="Modificar" onclick="modifyPerson();">
+            <input type="button" id="deleteFormDataButton" name="deleteFormDataButton" value="Eliminar" onclick="deletePerson();">
+        </div>
+    </form>
+    <div>
+        <h2>Lista de alumnos y materias</h2>
+    </div>
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Cuatrimestre</th>
+            <th>Fecha final</th>
+            <th>Turno</th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+</html>

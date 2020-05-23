@@ -106,12 +106,12 @@ function modifyPerson() {
     var turno = checkRadioOption();
 
     // cambio de sentido el yyyy/mm/dd por dd/mm/yyyy
-    var fechaEnArray = fecha.split("-");
-    var dia = fechaEnArray[2];
-    var mes = fechaEnArray[1];
-    var anio = fechaEnArray[0];
+    var arrayFecha = fecha.split("-");
+    var dia = arrayFecha[2];
+    var mes = arrayFecha[1];
+    var anio = arrayFecha[0];
 
-    nuevaFecha = dia + "-" + mes + "-" + anio;
+    nuevaFecha = dia + "/" + mes + "/" + anio;
 
     if (!validString(nombre)) {
         document.getElementById("nombre").className = "error";
@@ -123,7 +123,7 @@ function modifyPerson() {
         this.clearBorderTextBoxForm();
         this.clearForm();
 
-        var data = { id:id, nombre:nombre, cuatrimestre:cuatrimestre, fecha:nuevaFecha, turno:turno };
+        var data = { id:id, nombre:nombre, cuatrimestre:cuatrimestre, fechaFinal:nuevaFecha, turno:turno };
         console.log(data);
         this.sendModifyPerson(data);
         this.hideForm();

@@ -4,7 +4,7 @@
  */
 function validString(string) {
     var value = true;
-    var pattern = RegExp("^[A-Za-z ]+$");
+    var pattern = RegExp("^[A-Za-z0-9 \u00E0-\u00FC]+$");
 
     if (string.trim() == 0) {
         alert("El campo no puede estar vacio.");
@@ -67,8 +67,8 @@ function compareDate(date) {
         todayToString = year + "-" + month + "-" + day;
 
         // comparo la fecha actual con la fecha ingresada en el formulario
-        if (date >= todayToString) {
-            alert("La fecha ingresada debe ser menor a la fecha actual");
+        if (date <= todayToString) {
+            alert("La fecha ingresada debe ser mayor a la fecha actual");
             value = false;  
         }
     }
@@ -78,4 +78,17 @@ function compareDate(date) {
     }
     
     return value;
+}
+
+/**
+ * cambio de sentido el formato yyyy/mm/dd por dd/mm/yyyy
+ * @param {*} date 
+ */
+function setDateByRegion(date) {
+    var dateArray = date.split("-");
+    var day = dateArray[2];
+    var month = dateArray[1];
+    var year = dateArray[0];
+
+    return newDate = day + "/" + month + "/" + year;
 }
